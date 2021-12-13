@@ -24,12 +24,13 @@ class App extends React.Component {
             comment: "",
             open: "",
             options: [],
+            word: ""
         }
     }
 
     componentDidMount() {
         this.loadData()
-        this.makeOptions()
+        this.getOptions()
     }
 
     async loadData() {
@@ -62,31 +63,34 @@ class App extends React.Component {
             })
     }
 
-    makeOptions() {
-        const words = [
-            "python", "python3", "py", "java", "ja", "javascript", "js", "kotlin", "kt", "swift",
-            "loop", "for", "while", "break", "continue", "if", "elif", "else", "in", "not", "and", "or", "try", "catch", "except", "error", "when", "case", "switch", "then", "comment", "out", "with", "open",
-            "class", "def", "function", "func", "const", "let", "var", "val", "global", "local",
-            "import", "from", "require",
-            "list", "array", "mutable", "dict", "dictionary", "object", "obj", "set", "map", "tuple", "range",
-            "chr", "character", "str", "string", "int", "integer", "long", "float", "double", "bool", "boolean", "true", "false", "date", "time",
-            "console", "log", "print", "printf", "println", "reader", "read", "readline", "input", "stream", "join", "pow", "power", "minus", "plus", "round", "add", "append", "push", "concat", "unshift", "shift",  "delete", "pop", "remove", "removeAt", "slice", "filter", "reduce", "some", "every", "flat", "flatMap", "splice", "find", "findindex", "includes", "lastindex", "keys", "fill", "zfill", "round",  "enumerate", "isnull", "forEach", "isnumeric", "random", "randint", "ran", "len", "length", "size", "reverse", "reversed", "sort", "sorted", "shuffle", "shuffled", "format", "f", "replace", "type",
+    async getOptions() {
+        const url = 'http://133.242.158.143:8100/getword'
+        return fetch(url)
+            .then((res) => res.json())
+            .then((res) => {
+                const options = []
+                res.forEach(i => {
+                    options.push({value: i, label: i})
+                })
+                this.setState({options: options})
+            })
+    }
 
-
-
-            "insert", "extend",
-
-
-
-
-            "event", "mouse", "value", "key", "document", "window", "listener", "context", "position", "index", "url", "uri", "get", "set", "item", "file", "write", "read", "os", "system", "request", "response", "beautifulsoup", "soup", "subprocess",
-            "echo", "cat", "do", "done", "sleep", 
-        ]
-        const options = []
-        words.forEach(i => {
-            options.push({value: i, label: i})
-        })
-        this.setState({options: options})
+    async postOptions() {
+        const key = this.state.key
+        const word = this.state.word
+        if (word === '') {return}
+        const url = `http://133.242.158.143:8100/postword?key=${key}&word=${word}`
+        return fetch(url)
+            .then((res) => res.json())
+            .then((res) => {
+                if(res.length === 0) {return}
+                const options = []
+                res.forEach(i => {
+                    options.push({value: i, label: i})
+                })
+                this.setState({options: options})
+            })
     }
 
     handleClickLang(lang) {
@@ -308,7 +312,22 @@ class App extends React.Component {
             </div>
         </div>
     </div>
-    <div id="content_footer">
+    <div className="save_button">
+        <Button
+            variant="contained"
+            className="save_button"
+            onClick={() => {this.postOptions()}} >
+            append tag
+        </Button>
+        <TextField
+            label="newTag"
+            multiline
+            maxRows={8}
+            value={this.state.word}
+            onChange={e => {this.setState({word: e.target.value})}}
+            variant="filled" />
+    </div>
+    <div id="content_footer" className="clear_right">
         <Button
             variant="contained"
             className="save_button"

@@ -2,6 +2,9 @@ h3 {
     color: #fff;
     cursor: pointer;
 }
+.clear_right {
+    clear: right;
+}
 
 .new_text {
     float: left;
