@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { Helmet } from 'react-helmet';
 import Select from 'react-select';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -183,11 +182,6 @@ class App extends React.Component {
     render() {
         return (
 <div>
-<Helmet>
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-</meta>
-<title>PiyoCSDataForm</title>
-</Helmet>
 
 <div id="content">
     <div id="content_header" >
