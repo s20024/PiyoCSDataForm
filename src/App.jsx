@@ -71,6 +71,14 @@ class App extends React.Component {
             "list", "array", "mutable", "dict", "dictionary", "object", "obj", "set", "map", "tuple", "range",
             "chr", "character", "str", "string", "int", "integer", "long", "float", "double", "bool", "boolean", "true", "false", "date", "time",
             "console", "log", "print", "printf", "println", "reader", "read", "readline", "input", "stream", "join", "pow", "power", "minus", "plus", "round", "add", "append", "push", "concat", "unshift", "shift",  "delete", "pop", "remove", "removeAt", "slice", "filter", "reduce", "some", "every", "flat", "flatMap", "splice", "find", "findindex", "includes", "lastindex", "keys", "fill", "zfill", "round",  "enumerate", "isnull", "forEach", "isnumeric", "random", "randint", "ran", "len", "length", "size", "reverse", "reversed", "sort", "sorted", "shuffle", "shuffled", "format", "f", "replace", "type",
+
+
+
+            "insert", "extend",
+
+
+
+
             "event", "mouse", "value", "key", "document", "window", "listener", "context", "position", "index", "url", "uri", "get", "set", "item", "file", "write", "read", "os", "system", "request", "response", "beautifulsoup", "soup", "subprocess",
             "echo", "cat", "do", "done", "sleep", 
         ]
