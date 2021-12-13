@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/PiyoCSDataForm/static/css/main.b3f77a26.chunk.css",
+    "main.js": "/PiyoCSDataForm/static/js/main.c6baef07.chunk.js",
+    "main.js.map": "/PiyoCSDataForm/static/js/main.c6baef07.chunk.js.map",
+    "runtime-main.js": "/PiyoCSDataForm/static/js/runtime-main.db5c1f2c.js",
+    "runtime-main.js.map": "/PiyoCSDataForm/static/js/runtime-main.db5c1f2c.js.map",
+    "static/js/2.527b98b7.chunk.js": "/PiyoCSDataForm/static/js/2.527b98b7.chunk.js",
+    "static/js/2.527b98b7.chunk.js.map": "/PiyoCSDataForm/static/js/2.527b98b7.chunk.js.map",
+    "static/js/3.9e6e4a7c.chunk.js": "/PiyoCSDataForm/static/js/3.9e6e4a7c.chunk.js",
+    "static/js/3.9e6e4a7c.chunk.js.map": "/PiyoCSDataForm/static/js/3.9e6e4a7c.chunk.js.map",
+    "index.html": "/PiyoCSDataForm/index.html",
+    "static/css/main.b3f77a26.chunk.css.map": "/PiyoCSDataForm/static/css/main.b3f77a26.chunk.css.map",
+    "static/js/2.527b98b7.chunk.js.LICENSE.txt": "/PiyoCSDataForm/static/js/2.527b98b7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.db5c1f2c.js",
+    "static/js/2.527b98b7.chunk.js",
+    "static/css/main.b3f77a26.chunk.css",
+    "static/js/main.c6baef07.chunk.js"
+  ]
+}
